@@ -1,10 +1,10 @@
 ### 配置
 
-```
+```json
 {
   "$schema": "https://ddns.newfuture.cc/schema/v2.8.json",
-  "id": "150820",
-  "token": "eb645d8138fe0bbfdb4b1e9251d18abd",
+  "id": "xxx",
+  "token": "xxx",
   "dns": "dnspod",
   "ipv4": [],
   "ipv6": ["disk.romengine.com"],
@@ -17,5 +17,5 @@
 
 ```
 
-
+https://github.com/NewFuture/DDNS
 
