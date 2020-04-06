@@ -117,7 +117,6 @@ sudo service nginx stop
    sudo service nginx restart
    ```
    
-   
 
 #### RHEL, Fedora, CentOS
 
@@ -256,8 +255,6 @@ sudo service nginx stop
            exit 2
    esac
    ```
-
-   
 
 2. 设置文件的访问权限
 
