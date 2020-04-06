@@ -113,7 +113,7 @@
    sudo /etc/init.d/nginx stop
    sudo /etc/init.d/nginx restart
    sudo service nginx start
-sudo service nginx stop
+   sudo service nginx stop
    sudo service nginx restart
    ```
    
