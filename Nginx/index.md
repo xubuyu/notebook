@@ -116,7 +116,7 @@
    sudo service nginx stop
    sudo service nginx restart
    ```
-   
+
 
 #### RHEL, Fedora, CentOS
 
@@ -275,7 +275,7 @@
    sudo chkconfig --add /etc/init.d/nginx
    ```
 
-5.  使用service对nginx进行启动，重启等操作
+5.  使用 service 对 nginx 进行启动，重启等操作
 
    ```shell 
    sudo service nginx start
