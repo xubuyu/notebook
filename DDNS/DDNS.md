@@ -14,7 +14,6 @@
   "proxy": null,
   "debug": false
 }
-
 ```
 
 https://github.com/NewFuture/DDNS
