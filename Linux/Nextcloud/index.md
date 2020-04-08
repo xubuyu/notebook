@@ -28,3 +28,11 @@ nextcloud-full
 ```shell 
 vim /opt/nextcloud/config/config.php
 ```
+
+### 解决 Nginx 上传大小限制问题
+
+在server 配置中配置上限： client_max_body_size 10240m;
+
+### 参考文献
+
+https://docs.nextcloud.com/

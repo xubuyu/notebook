@@ -1,0 +1,60 @@
+### 硬盘相关
+
+```shell
+1. 查看可挂载的磁盘
+fdisk -l
+2. 查看已经挂载的磁盘
+df -h
+3. 初始化磁盘,格式是ext4,注意这里会格式化可挂载磁盘
+mkfs.ext4 /dev/sda1
+4.mount 磁盘到/disk01，保证/disk01为空
+mount /dev/sda1 /disk01
+5. 获取磁盘的uuid和属性，用uuid来进行开机mount
+blkid
+
+# 这个可以直接获取UUID
+(blkid /dev/sda1) | awk '{print $3}' | awk -F'"' '{print $2}'
+
+6. 开机mount，模板是UUID=********** /disk01  ext4  defaults  0 1
+vim /etc/fstab
+
+# 整合命令
+echo "UUID=`(blkid /dev/sda1) | awk '{print $3}' | awk -F'"' '{print $2}'`  /home/storage  ext4  defaults  0 1" >> /etc/fstab
+
+
+-B	设置高级电源管理功能。可能的值在1到255之间，较低的值表示更积极的电源管理，较高的值表示更好的性能。从1到127的值允许降速旋转，而从128到254的值不允许降速旋转。值255将完全禁用该功能。
+-S	设置驱动器的待机（停工）超时。超时指定关闭电动机以节省功率之前在空闲（无磁盘活动）中等待多长时间。12的倍数（120即是10分钟）。
+-M	设置自动声学管理功能。大多数现代硬盘驱动器都具有加快磁头移动速度以减少其噪音输出的能力。可能的值取决于磁盘，某些磁盘可能不支持此功能。(0-254, 128: quiet, 254: fast)
+-W 写缓存（0关闭，1开启）
+
+# omv的做法
+hdparm -B1 /dev/sda
+hdparm -S120 /dev/sda
+hdparm -M0 /dev/sda
+hdparm -W1 /dev/sda
+```
+
+硬盘休眠
+
+```shell
+1. 设置硬盘省电策略
+hdparm -S 30 /dev/sda
+
+30 = 2 min 30 sec
+60 = 5 minutes
+120 = 10 minutes
+180 = 15 minutes
+241 = 30 minutes
+242 = 1 hour
+243 = 1.5 hours
+244 = 2 hours
+
+2. 添加定时任务
+sudo vi /etc/crontab
+#加入如下一行(10分钟一次使硬盘进入休眠状态)
+*/10 * * * *    root    hdparm -Y /dev/sda
+
+3. 检查硬盘当前省电状态
+sudo hdparm -C /dev/sda
+```
+
