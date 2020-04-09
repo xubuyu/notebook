@@ -20,6 +20,7 @@ docker run -d \
 --restart always \
 -p 5243:80 \
 -v /opt/nextcloud:/var/www/html \
+-v /mnt:/mnt \
 nextcloud-full
 ```
 
