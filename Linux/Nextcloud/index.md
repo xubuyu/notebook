@@ -16,6 +16,7 @@ docker images
 
 ```shell 
 docker run -d \
+--link mysql:mysql \
 --name nextcloud \
 --restart always \
 -p 5243:80 \
@@ -24,10 +25,15 @@ docker run -d \
 nextcloud-full
 ```
 
-### 添加信任域名
-编辑配置文件，在 trusted_domains 下添加信任的域名
-```shell 
-vim /opt/nextcloud/config/config.php
+> 注意：**--link container_name or id:name** 表示链接到 mysql 容器，在容器内部可以使用 alias 作为 host 访问 mysql 容器。docker会将源容器的host更新到目标容器的/etc/hosts中。
+
+### 关于 config.php
+
+config/config.php 为 nextcloud 的配置文件，可手动修改：
+```php 
+trusted_domains: 信任域名
+dbxxx: 数据库相关配置
+overwrite.cli.url: 客户端链接
 ```
 
 ### 解决 Nginx 上传大小限制问题
