@@ -7,12 +7,12 @@ docker run -d \
   --log-opt max-size=1m \
   -e PUID=0 \
   -e PGID=0 \
-  -e RPC_SECRET="Rmj.5243" \
+  -e RPC_SECRET="12345666." \
   -p 6800:6800 \
   -p 6888:6888 \
   -p 6888:6888/udp \
   -v /opt/aria2/config:/config \
-  -v /mnt/hdd0/downloads:/downloads \
+  -v /mnt/hdd0:/downloads \
   p3terx/aria2-pro
 ```
 

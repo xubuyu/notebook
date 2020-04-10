@@ -7,6 +7,8 @@ docker run -it -p 139:139 -p 445:445 --name samba \
 -d dperson/samba:aarch64 -p \
 -r \
 -u "Romengine;Rmj.5243" \
--s "Romengine;/mount;yes;no;yes"
+-u "Lytine;latiao123" \
+-s "Romengine;/mount;yes;no;no;Romengine" \
+-s "Lytine;/mount/hdd0/Lytine;yes;no;no;Romengine"
 ```
 
