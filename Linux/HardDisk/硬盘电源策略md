@@ -57,4 +57,3 @@ sudo vi /etc/crontab
 3. 检查硬盘当前省电状态
 sudo hdparm -C /dev/sda
 ```
-
