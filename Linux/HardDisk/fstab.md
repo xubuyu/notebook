@@ -1,4 +1,4 @@
-### 查询设备 UUID
+### 查询分区 UUID
 
 ```shell 
 blkid
@@ -9,7 +9,7 @@ blkid
 添加配置并重启查看是否生效
 
 ```shell 
-UUID=52DD-A2BE    /mnt/udisk0/    exfat    user,rw    0    2
+UUID=<分区UUID>    /mnt/udisk0/    ext4    defaults    0    2
 ```
 
 ### 配置说明
