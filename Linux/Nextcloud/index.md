@@ -3,7 +3,7 @@
 
 ```shell 
 git clone https://github.com/nextcloud/docker.git
-cd docker/.examples/dockerfiles/[full | smb]
+cd docker/.examples/dockerfiles/[full | smb]/[apache | fpm | fpm-alpine]
 docker build -t nextcloud-full:latest .
 ```
 编译完成后查询是否已经生成 nextcloud-full 镜像
