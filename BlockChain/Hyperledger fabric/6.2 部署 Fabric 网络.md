@@ -1,32 +1,3 @@
-### 项目目录结构
-
-```bash
-> tree -L 3
-.
-├── application
-│   ├── tenant-info
-│       └── contract
-├── network
-│   ├── channel-artifacts
-│   │   ├── Org1MSPanchors.tx
-│   │   ├── Org2MSPanchors.tx
-│   │   └── tenant.tx
-│   ├── configtx
-│   │   └── configtx.yaml
-│   ├── docker
-│   │   └── docker-compose.yaml
-│   ├── organizations
-│   │   ├── cryptogen
-│   │   ├── fabric-ca
-│   │   ├── ordererOrganizations
-│   │   └── peerOrganizations
-│   └── system-genesis-block
-│       └── genesis.block
-└── README.md
-```
-
-
-
 ### 进入工作路径
 
 ```bash
